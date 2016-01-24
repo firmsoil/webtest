@@ -13,5 +13,6 @@ node {
    // Mark the code build 'stage'....
    stage 'Build'
    // Run the maven build
+   echo "Runnung build now..."
    sh "${mvnHome}/bin/mvn clean"
 }
