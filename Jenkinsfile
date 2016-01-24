@@ -6,7 +6,7 @@ node {
    stage 'Checkout'
 
    // Checkout code from repository
-   echo ${checkoutMsg}
+   echo "${checkoutMsg}"
    checkout scm
 
    // Get the maven tool.
