@@ -1,8 +1,12 @@
+
+def checkoutMsg = 'Checking out code from repository'
+
 node {
    // Mark the code checkout 'stage'....
    stage 'Checkout'
 
    // Checkout code from repository
+   echo ${checkoutMsg}
    checkout scm
 
    // Get the maven tool.
