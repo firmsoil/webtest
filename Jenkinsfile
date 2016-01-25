@@ -1,8 +1,8 @@
 
 def configCDPipeline = new ConfigSlurper().parse(new File('configCDPipeline.groovy').text)
 
-assert "https://www.artifactoryserverhost.com" == configCDPipeline.artifactoryURL
-assert configCDPipeline.artifactoryURL.class == String
+//assert "https://www.artifactoryserverhost.com" == configCDPipeline.artifactoryURL
+//assert configCDPipeline.artifactoryURL.class == String
 
 
 def checkoutMsg = 'Checking out code from repository'
