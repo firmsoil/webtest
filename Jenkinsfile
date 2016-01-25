@@ -21,17 +21,12 @@ echo "${artifactoryUserName}"
 echo "${artifactoryPassword}"
 echo "${buildNbr}"
 
-stage 'Load files from GitHub'
-def environment, helloworld
-fileLoader.withGit('https://github.com/jenkinsci/workflow-remote-loader-plugin.git', 'master', null, '') {
-    helloworld = fileLoader.load('examples/fileLoader/helloworld');
-    environment = fileLoader.load('examples/fileLoader/environment');
-}
+stage 'Load a file from GitHub'
+def helloworld = fileLoader.fromGit('examples/fileLoader/helloworld', 
+        'https://github.com/jenkinsci/workflow-remote-loader-plugin.git', 'master', null, '')
 
-stage 'Run methods from the loaded content'
+stage 'Run method from the loaded file'
 helloworld.printHello()
-environment.dumpEnvVars()
-
 
    // Mark the code checkout 'stage'....
    stage 'Checkout'
