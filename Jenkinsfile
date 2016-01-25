@@ -6,7 +6,7 @@
 
 
 def artifactoryURL="https://www.artifactoryserverhost.com"
-def numberProperty=100
+def buildNbr=100
 //booleanProperty=false
 //listProperty=["Monday", "Tuesday", "Wednesday"]
 def artifactoryUserName="username"
@@ -15,6 +15,13 @@ def artifactoryPassword="password"
 def checkoutMsg = 'Checking out code from repository'
 
 node {
+
+echo "${artifactoryURL}"
+echo "${artifactoryUserName}"
+echo "${artifactoryPassword}"
+echo "${buildNbr}"
+
+
    // Mark the code checkout 'stage'....
    stage 'Checkout'
 
