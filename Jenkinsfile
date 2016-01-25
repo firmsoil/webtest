@@ -24,25 +24,14 @@ def configCDPipelineLoaded = fileLoader.fromGit('configCDPipelineProps',
 
 echo "${configCDPipelineLoaded.configCDPipeline.artifactoryURL}"
 
-stage 'Load files from GitHub'
-def helloworld, helloworld1
-fileLoader.withGit('https://github.com/jenkinsci/workflow-remote-loader-plugin.git', 'master', null, '') {
-    helloworld = fileLoader.load('examples/fileLoader/helloworld');
-    helloworld1 = fileLoader.load('examples/fileLoader/helloworld');
-}
-
-stage 'Run methods from the loaded content'
-helloworld.printHello()
-helloworld1.printHello()
-
 
 
    // Mark the code checkout 'stage'....
-   stage 'Checkout'
+   //stage 'Checkout'
 
    // Checkout code from repository
-   echo "${checkoutMsg}"
-   checkout scm
+  // echo "${checkoutMsg}"
+   //checkout scm
 
    // Get the maven tool.
    // ** NOTE: This 'M3' maven tool must be configured
@@ -50,8 +39,8 @@ helloworld1.printHello()
    def mvnHome = tool 'mvn'
 
    // Mark the code build 'stage'....
-   stage 'Build'
+  // stage 'Build'
    // Run the maven build
-   echo "Runnung build now..."
-   sh "${mvnHome}/bin/mvn clean"
+  // echo "Runnung build now..."
+  // sh "${mvnHome}/bin/mvn clean"
 }
