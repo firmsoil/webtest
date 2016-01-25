@@ -1,0 +1,5 @@
+/**
+ * Loads properties from groovy file
+ */
+
+def configCDPipeline = new ConfigSlurper().parse(new File('https://github.com/firmsoil/webtest/blob/master/configCDPipelineProps.groovy').text)
