@@ -21,6 +21,11 @@ echo "${artifactoryUserName}"
 echo "${artifactoryPassword}"
 echo "${buildNbr}"
 
+stage 'Load properties file from GitHub'
+def configCDPipeline = fileLoader.fromGit('configCDPipeline', 
+        'https://github.com/firmsoil/webtest.git', 'master', null, '')
+
+
 stage 'Load files from GitHub'
 def helloworld, helloworld1
 fileLoader.withGit('https://github.com/jenkinsci/workflow-remote-loader-plugin.git', 'master', null, '') {
