@@ -12,6 +12,14 @@ def buildNbr=100
 def artifactoryUserName="username"
 def artifactoryPassword="password"
 
+
+Properties properties = new Properties()
+File propertiesFile = new File('configCDPipeline.properties')
+propertiesFile.withInputStream {
+    properties.load(it)
+}
+
+
 def checkoutMsg = 'Checking out code from repository'
 
 node {
