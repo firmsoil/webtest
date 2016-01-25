@@ -25,6 +25,7 @@ stage 'Load properties file from GitHub'
 def configCDPipeline = fileLoader.fromGit('configCDPipeline', 
         'https://github.com/firmsoil/webtest.git', 'master', null, '')
 
+echo "${configCDPipeline.artifactoryURL}"
 
 stage 'Load files from GitHub'
 def helloworld, helloworld1
