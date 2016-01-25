@@ -4,12 +4,7 @@
 //assert "https://www.artifactoryserverhost.com" == configCDPipeline.artifactoryURL
 //assert configCDPipeline.artifactoryURL.class == String
 
-stage 'Load a file from GitHub'
-def helloworld = fileLoader.fromGit('examples/fileLoader/helloworld', 
-        'https://github.com/jenkinsci/workflow-remote-loader-plugin.git', 'master', null, '')
 
-stage 'Run method from the loaded file'
-helloworld.printHello()
 
 
 def artifactoryURL="https://www.artifactoryserverhost.com"
@@ -28,6 +23,13 @@ echo "${artifactoryURL}"
 echo "${artifactoryUserName}"
 echo "${artifactoryPassword}"
 echo "${buildNbr}"
+
+stage 'Load a file from GitHub'
+def helloworld = fileLoader.fromGit('examples/fileLoader/helloworld', 
+        'https://github.com/jenkinsci/workflow-remote-loader-plugin.git', 'master', null, '')
+
+stage 'Run method from the loaded file'
+helloworld.printHello()
 
 
    // Mark the code checkout 'stage'....
