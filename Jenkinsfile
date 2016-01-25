@@ -1,6 +1,4 @@
-
 //def configCDPipeline = new ConfigSlurper().parse(new File('configCDPipeline.groovy').text)
-
 //assert "https://www.artifactoryserverhost.com" == configCDPipeline.artifactoryURL
 //assert configCDPipeline.artifactoryURL.class == String
 
@@ -10,7 +8,6 @@ def buildNbr=100
 //listProperty=["Monday", "Tuesday", "Wednesday"]
 def artifactoryUserName="username"
 def artifactoryPassword="password"
-
 
 def checkoutMsg = 'Checking out code from repository'
 
@@ -22,10 +19,10 @@ echo "${artifactoryPassword}"
 echo "${buildNbr}"
 
 stage 'Load properties file from GitHub'
-def configCDPipeline = fileLoader.fromGit('configCDPipeline', 
+def configCDPipelineLoaded = fileLoader.fromGit('configCDPipelineProps', 
         'https://github.com/firmsoil/webtest.git', 'master', null, '')
 
-echo "${configCDPipeline.artifactoryURL}"
+echo "${configCDPipelineLoaded.configCDPipeline.artifactoryURL}"
 
 stage 'Load files from GitHub'
 def helloworld, helloworld1
