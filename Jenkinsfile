@@ -1,9 +1,16 @@
 
-def configCDPipeline = new ConfigSlurper().parse(new File('configCDPipeline.groovy').text)
+//def configCDPipeline = new ConfigSlurper().parse(new File('configCDPipeline.groovy').text)
 
 //assert "https://www.artifactoryserverhost.com" == configCDPipeline.artifactoryURL
 //assert configCDPipeline.artifactoryURL.class == String
 
+
+def artifactoryURL="https://www.artifactoryserverhost.com"
+def numberProperty=100
+//booleanProperty=false
+//listProperty=["Monday", "Tuesday", "Wednesday"]
+def artifactoryUserName="username"
+def artifactoryPassword="password"
 
 def checkoutMsg = 'Checking out code from repository'
 
