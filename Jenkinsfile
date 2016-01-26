@@ -28,7 +28,10 @@ helloworld.printHello()
 
 
 //stage 'Load properties file from GitHub'
-def configCDPipelineLoaded = fileLoader.fromGit('configCDPipeline', 'https://github.com/firmsoil/webtest.git', 'master', null, '')
+def configCDPipelineLoaded = fileLoader.fromGit('configCDPipeline', 
+'https://github.com/firmsoil/webtest.git', 'master', null, '')
+
+configCDPipelineLoaded.printHello()
 
 //echo "${configCDPipelineLoaded.propFile.url}"
 
