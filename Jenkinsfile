@@ -13,10 +13,6 @@ def checkoutMsg = 'Checking out code from repository'
 
 node {
 
-properties [[$class: 'ParametersDefinitionProperty', 
-parameterDefinitions: [[$class: 'FileParameterDefinition', description: '', 
-name: 'configCDPipelineProps.properties']]]]
-
 echo "${artifactoryURL}"
 echo "${artifactoryUserName}"
 echo "${artifactoryPassword}"
