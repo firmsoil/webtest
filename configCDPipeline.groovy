@@ -11,7 +11,7 @@ listProperty=["Monday", "Tuesday", "Wednesday"]
 artifactoryUserName="username"
 artifactoryPassword="password"
   
-def getURL(artifactoryURL) {
+def getURL() {
   return artifactoryURL;
 }
 
