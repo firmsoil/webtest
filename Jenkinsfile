@@ -19,8 +19,8 @@ echo "${artifactoryPassword}"
 echo "${buildNbr}"
 
 //stage 'Load properties file from GitHub'
-//def configCDPipelineLoaded = fileLoader.fromGit('configCDPipeline', 
-  //      'https://github.com/firmsoil/webtest.git', 'master', null, '')
+def configCDPipelineLoaded = fileLoader.fromGit('configCDPipeline', 
+       'https://github.com/firmsoil/webtest.git', 'master', null, '')
 
 //echo "${configCDPipelineLoaded.propFile.url}"
 
