@@ -15,7 +15,7 @@ node {
 
 properties [[$class: 'ParametersDefinitionProperty', 
 parameterDefinitions: [[$class: 'FileParameterDefinition', description: '', 
-name: 'https://github.com/firmsoil/webtest/blob/master/configCDPipelineProps.properties']]]]
+name: 'configCDPipelineProps.properties']]]]
 
 echo "${artifactoryURL}"
 echo "${artifactoryUserName}"
