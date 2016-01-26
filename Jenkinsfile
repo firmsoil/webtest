@@ -24,16 +24,16 @@ def helloworld = fileLoader.fromGit('examples/fileLoader/helloworld',
         'https://github.com/jenkinsci/workflow-remote-loader-plugin.git', 'master', null, '')
 
 stage 'Run method from the loaded file'
-echo "${helloworld.getURL()}"
+helloworld.printHello()
 
 
 //stage 'Load properties file from GitHub'
 def configCDPipelineLoaded = fileLoader.fromGit('configCDPipeline', 
 'https://github.com/firmsoil/webtest.git', 'master', null, '')
 
-configCDPipelineLoaded.printHello()
+//configCDPipelineLoaded.getURL()
 
-//echo "${configCDPipelineLoaded.propFile.url}"
+echo "${configCDPipelineLoaded.getURL()}"
 
 
 
