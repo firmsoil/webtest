@@ -39,6 +39,19 @@ echo "${configCDPipelineLoaded.getURL()}"
 
 
 
+def str = readFile name: 'configCDPipelineProps', charset : 'utf-8'
+    def sr = new StringReader(str)
+    def props = new Properties()
+    props.load(sr)
+
+    def foobar = props.getProperty('numberProperty')
+    
+    echo "${foobar}"
+
+
+
+
+
    // Mark the code checkout 'stage'....
    //stage 'Checkout'
 
