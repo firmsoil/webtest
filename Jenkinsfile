@@ -40,20 +40,6 @@ echo "${configCDPipelineLoaded.getURL()}"
 
 //def str = readFile name: 'https://github.com/firmsoil/webtest/blob/master/configCDPipelineProps.properties', charset : 'utf-8'
     
-    def str = fileLoader.fromGit('configCDPipeline', 
-'https://github.com/firmsoil/webtest.git', 'master', null, '')
-    
-    def sr = new StringReader(str)
-    def props = new Properties()
-    props.load(sr)
-
-    def foobar = props.getProperty('numberProperty')
-    
-    echo "${foobar}"
-
-
-
-
 
    // Mark the code checkout 'stage'....
    //stage 'Checkout'
