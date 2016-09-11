@@ -4,6 +4,9 @@
 //assert "https://www.artifactoryserverhost.com" == configCDPipeline.artifactoryURL
 //assert configCDPipeline.artifactoryURL.class == String
 
+def testMsg = 'Created branch 09112016 in repository'
+
+
 def artifactoryURL="https://www.artifactoryserverhost.com"
 def buildNbr=100
 //booleanProperty=false
